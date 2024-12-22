@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/Sorting/BubbleSort/BubbleSort.iml" filepath="$PROJECT_DIR$/Sorting/BubbleSort/BubbleSort.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/DSA-JAVA.iml" filepath="$PROJECT_DIR$/.idea/DSA-JAVA.iml" />
       <module fileurl="file://$PROJECT_DIR$/Linear Search/Linear Search.iml" filepath="$PROJECT_DIR$/Linear Search/Linear Search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Quick Sort/Quick Sort.iml" filepath="$PROJECT_DIR$/Quick Sort/Quick Sort.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sorting/Sorting.iml" filepath="$PROJECT_DIR$/Sorting/Sorting.iml" />
     </modules>
   </component>
