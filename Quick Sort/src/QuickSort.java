@@ -2,32 +2,64 @@ import java.util.Arrays;
 
 public class QuickSort {
 
-    public static void swap(int[] arr, int a , int b){
-
-        int temp = arr[a];
-            arr[a]=arr[b];
-            arr[b]=temp;
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
-    public static  int[] partition(int[] arr,int start,int end){
+
+    // Partition using first element as pivot
+    public static int partition(int[] arr, int start, int end) {
 
         int pivot = arr[start];
-        int count = 0 ;
 
-        for(int i = start+1 ; i <= end ; i++){
+        int i = start;
+        int j = end;
 
-            if(arr[i]<=pivot){
-                count++;
+        while (i < j) {
+
+            // Move i right until element > pivot
+            while (i <= end && arr[i] <= pivot) {
+                i++;
+            }
+
+            // Move j left until element <= pivot
+            while (arr[j] > pivot) {
+                j--;
+            }
+
+            // Swap if i is still left of j
+            if (i < j) {
+                swap(arr, i, j);
             }
         }
-        int pivotIndex=start+count;
-        swap(arr,arr[pivotIndex],arr[start]);
-        return arr;
+
+        // Place pivot at correct position
+        swap(arr, start, j);
+
+        return j; // pivot index
     }
-    public static void main(String[] args)
-    {
-        int[] arr = {3,4,1,2,5};
-        //System.out.println(partition(arr,0, arr.length-1));
-        partition(arr,0, arr.length-1);
+
+    // QuickSort recursion
+    public static void quickSort(int[] arr, int start, int end) {
+
+        if (start < end) {
+            int pivotIndex = partition(arr, start, end);
+
+            quickSort(arr, start, pivotIndex - 1); // left part
+            quickSort(arr, pivotIndex + 1, end);   // right part
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 4, 1, 2, 5};
+
+        quickSort(arr, 0, arr.length - 1);
+
         System.out.println(Arrays.toString(arr));
     }
 }
+//abcd
+//bcda
+//cdab
+//dabc
